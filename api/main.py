@@ -9,8 +9,8 @@ import tensorflow as tf
 app = FastAPI()
 
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
+    "http://127.0.0.1",
+    "http://127.0.0.1:3000",
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -50,4 +50,4 @@ async def predict(
     }
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='localhost', port=8000)
+    uvicorn.run(app, host='127.0.0.1', port=8000)

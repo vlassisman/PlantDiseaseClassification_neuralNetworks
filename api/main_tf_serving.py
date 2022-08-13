@@ -10,8 +10,8 @@ import requests
 app = FastAPI()
 
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
+    "http://127.0.0.1",
+    "http://127.0.0.1:3000",
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -21,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-endpoint = "http://localhost:8501/v1/models/potatoes_model:predict"
+endpoint = "http://127.0.0.1:8501/v1/models/potatoes_model:predict"
 
 CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
 
