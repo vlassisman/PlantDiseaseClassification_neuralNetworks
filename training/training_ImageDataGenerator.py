@@ -14,7 +14,7 @@ train_datagen = ImageDataGenerator(
 )
 
 train_generator = train_datagen.flow_from_directory(
-    'dataset/train',
+    '/dataset/train',
     target_size=(IMAGE_SIZE, IMAGE_SIZE),
     batch_size=32,
     class_mode='sparse',
