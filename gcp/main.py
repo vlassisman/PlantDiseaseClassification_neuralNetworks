@@ -3,6 +3,11 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 
+model = None
+interpreter = None
+input_index = None
+output_index = None
+
 BUCKET_NAME = "vlasis"
 class_names = ["Early Blight", "Late Blight", "Healthy"]
 
@@ -14,7 +19,7 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
     blob = bucket.blob(source_blob_name)
     blob.download_to_filename(destination_file_name)
 
-def predict_lite(request):
+def predict(request):
     global model
     if model is None:
         download_blob(
